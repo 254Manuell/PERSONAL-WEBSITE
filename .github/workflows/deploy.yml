@@ -4,7 +4,12 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly deployment to ensure site is up
 
 permissions:
   contents: read
@@ -24,12 +29,35 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for proper timestamps
+
+      - name: Optimize Images
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y optipng jpegoptim
+          find . -type f -name '*.png' -exec optipng -o5 {} \;
+          find . -type f \( -name '*.jpg' -o -name '*.jpeg' \) -exec jpegoptim --max=85 {} \;
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Prepare deployment
+        run: |
+          echo "Last updated: $(date -u)" >> last_updated.txt
+          echo "Commit: ${{ github.sha }}" >> last_updated.txt
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: '.'
+          retention-days: 30
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
