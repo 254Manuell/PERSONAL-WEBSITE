@@ -4,8 +4,9 @@ A modern, responsive portfolio website showcasing my journey as a Data Analyst a
 
 ## 🌐 Live Demo
 
-- ✨ [Primary Site (GitHub Pages)](https://254manuell.github.io/PERSONAL-WEBSITE/)
-- 🚀 [Netlify Deployment](https://emmanuel-ngunnzi-portfolio.windsurf.build)
+🌟 **[View Live Portfolio](https://254manuell.github.io/PERSONAL-WEBSITE/)**
+
+This portfolio is hosted using GitHub Pages, providing reliable and fast access to my professional work and projects.
 
 ## ✨ Features
 
