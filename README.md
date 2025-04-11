@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my journey as a Data Analyst a
 
 ## 🌐 Live Demo
 
-🌟 **[View Live Portfolio](https://254manuell.github.io/PERSONAL-WEBSITE/)**
+🌟 **[View Live Portfolio](https://personal-website-weld-phi.vercel.app/)**
 
 This portfolio is hosted using GitHub Pages, providing reliable and fast access to my professional work and projects.
 
