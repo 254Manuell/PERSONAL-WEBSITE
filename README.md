@@ -127,7 +127,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 Emmanuel Ngunnzi - [ngunnzie@gmail.com](mailto:ngunnzie@gmail.com)
 
-Project Link: [https://github.com/254Manuell/PERSONAL-WEBSITE](https://github.com/254Manuell/PERSONAL-WEBSITE)
+Project Link:https://personal-website-weld-phi.vercel.app/ 
 
 ---
 ⭐️ If you find this portfolio template helpful, feel free to give it a star!
